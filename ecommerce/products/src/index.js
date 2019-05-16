@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 
-class Products extends React.Component {
-    constructor(props) {
-        super(props);
+class Products extends HTMLElement {
+    constructor() {
+        super();
         const shadowRoot = this.attachShadow({mode: 'open'});
         const appRoot = document.createElement('div');
         shadowRoot.appendChild(appRoot);
