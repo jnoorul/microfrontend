@@ -2,14 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import { StyleSheetManager } from 'styled-components';
 
 class Products extends HTMLElement {
     constructor() {
         super();
         const shadowRoot = this.attachShadow({mode: 'open'});
+
         const appRoot = document.createElement('div');
+        const styleRoot = document.createElement('div');
+
         shadowRoot.appendChild(appRoot);
-        ReactDOM.render(<App />, appRoot);
+        shadowRoot.appendChild(styleRoot);
+
+        ReactDOM.render(<StyleSheetManager target={styleRoot}>
+            <App />
+        </StyleSheetManager>, appRoot);
     }
 }
 
