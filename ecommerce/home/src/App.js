@@ -1,10 +1,13 @@
 import React from 'react';
 import './App.css';
+import './registerWebComponents';
 
 function App() {
   return (
     <div className="App">
-      <h1>Welcome to Amaze!</h1>
+        <amaze-search></amaze-search>
+        <amaze-products-wrapper></amaze-products-wrapper>
+        <amaze-recommendations></amaze-recommendations>
     </div>
   );
 }

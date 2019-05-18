@@ -7,13 +7,13 @@ import { StyleSheetManager } from 'styled-components';
 class Products extends HTMLElement {
     constructor() {
         super();
-        const shadowRoot = this.attachShadow({mode: 'open'});
+        // const shadowRoot = this.attachShadow({mode: 'open'});
 
         const appRoot = document.createElement('div');
         const styleRoot = document.createElement('div');
 
-        shadowRoot.appendChild(appRoot);
-        shadowRoot.appendChild(styleRoot);
+        this.appendChild(appRoot);
+        this.appendChild(styleRoot);
 
         ReactDOM.render(<StyleSheetManager target={styleRoot}>
             <App />
@@ -22,3 +22,5 @@ class Products extends HTMLElement {
 }
 
 customElements.define('amaze-products', Products);
+
+
