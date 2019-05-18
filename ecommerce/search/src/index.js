@@ -3,23 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 
-class Search extends HTMLElement {
-    constructor() {
-        super();
-        const shadowRoot = this.attachShadow({mode: 'open'});
+//TODO: remove hard coding of web component id below. need to find a better way.
+const root = document.getElementById('search');
 
-        const appRoot = document.createElement('div');
+const appRoot = document.createElement('div');
+root.shadowRoot.appendChild(appRoot);
 
-        const styleTag = document.createElement('link');
-        styleTag.href = 'http://localhost:4001/static/css/app.css';
-        styleTag.rel = 'stylesheet';
-
-        shadowRoot.appendChild(styleTag);
-        shadowRoot.appendChild(appRoot);
-        ReactDOM.render(<App />, appRoot);
-    }
-}
-
-customElements.define('amaze-search', Search);
+ReactDOM.render(<App />, appRoot);
 
 

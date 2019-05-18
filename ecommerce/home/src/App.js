@@ -5,9 +5,9 @@ import './registerWebComponents';
 function App() {
   return (
     <div className="App">
-        <amaze-search></amaze-search>
+        <amaze-search id="search"></amaze-search>
         <amaze-products id="products"></amaze-products>
-        <amaze-recommendations></amaze-recommendations>
+        <amaze-recommendations id="recommendations"></amaze-recommendations>
     </div>
   );
 }
