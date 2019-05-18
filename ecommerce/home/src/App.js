@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
         <amaze-search></amaze-search>
-        <amaze-products-wrapper></amaze-products-wrapper>
+        <amaze-products id="products"></amaze-products>
         <amaze-recommendations></amaze-recommendations>
     </div>
   );
