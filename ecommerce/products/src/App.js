@@ -1,7 +1,6 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import './App.css';
-
-
 
 function App() {
   return (
@@ -11,4 +10,7 @@ function App() {
   );
 }
 
-export default App;
+
+export const renderApp = (appRoot) => {
+    ReactDOM.render(<App />, appRoot);
+};

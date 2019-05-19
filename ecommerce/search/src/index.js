@@ -3,13 +3,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 
-// const root = document.getElementById('search');
-//
-// const appRoot = document.createElement('div');
-// root.shadowRoot.appendChild(appRoot);
-//
-// ReactDOM.render(<App />, appRoot);
-
 class Search extends HTMLElement {
     constructor() {
         super();
