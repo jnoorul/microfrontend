@@ -1,15 +1,12 @@
 import React from 'react';
-import styled from 'styled-components';
+import './App.css';
 
 
-const StyledH1 = styled.h1`
-    color: blue;
-`;
 
 function App() {
   return (
     <div className="App">
-      <StyledH1>Welcome to Products!</StyledH1>
+      <h1>Welcome to Products!</h1>
     </div>
   );
 }
