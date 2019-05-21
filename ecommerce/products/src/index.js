@@ -1,5 +1,6 @@
-import './index.css';
 import { renderApp } from "./App";
+
+// window.SC_DISABLE_SPEEDY = true;
 
 class Products extends HTMLElement {
     constructor() {
@@ -7,14 +8,13 @@ class Products extends HTMLElement {
         const shadowRoot = this.attachShadow({mode: 'open'});
 
         const appRoot = document.createElement('div');
-        const styleTag = document.createElement('link');
-        styleTag.href = 'http://localhost:4002/static/css/app.css';
-        styleTag.rel = 'stylesheet';
-
         shadowRoot.appendChild(appRoot);
+
+        const styleTag = document.createElement('style');
         shadowRoot.appendChild(styleTag);
 
-        renderApp(appRoot);
+
+        renderApp(appRoot,styleTag);
     }
 }
 
