@@ -27,7 +27,7 @@ class App extends React.Component {
         return (
             <div id="App">
                 <button onClick={this.toggle}>show/hide</button>
-                {this.state.show && <p> {this.state.show} </p>}
+                {this.state.show && <StyledP> show is now true </StyledP>}
                 <StyledH1>Welcome to Products!</StyledH1>
                 <StyledP> Products paragraph </StyledP>
             </div>

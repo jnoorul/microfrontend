@@ -1,4 +1,5 @@
 import { renderApp } from "./App";
+import retargetEvents from 'react-shadow-dom-retarget-events'
 
 // window.SC_DISABLE_SPEEDY = true;
 
@@ -15,6 +16,7 @@ class Products extends HTMLElement {
 
 
         renderApp(appRoot,styleTag);
+        retargetEvents(shadowRoot);
     }
 }
 
