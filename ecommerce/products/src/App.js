@@ -4,10 +4,6 @@ import {CacheProvider} from '@emotion/core';
 import createCache from '@emotion/cache';
 import styled from '@emotion/styled';
 
-const StyledP = styled.p`
-    color: yellow;
-`;
-
 const StyledH1 = styled.h1`
     color: yellow;
 `;
@@ -16,20 +12,12 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = { show: true};
-        this.toggle = this.toggle.bind(this);
-    }
-
-    toggle() {
-        this.setState({ show: !this.state.show});
     }
 
     render() {
         return (
             <div id="App">
-                <button onClick={this.toggle}>show/hide</button>
-                {this.state.show && <StyledP> show is now true </StyledP>}
                 <StyledH1>Welcome to Products!</StyledH1>
-                <StyledP> Products paragraph </StyledP>
             </div>
         );
     }

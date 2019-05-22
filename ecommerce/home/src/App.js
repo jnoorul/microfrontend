@@ -1,12 +1,22 @@
 import React from 'react';
-import './App.css';
+import { Grid } from 'semantic-ui-react';
+import styles from './App.module.css';
+
 
 function App() {
   return (
-    <div className="App">
-        <amaze-search></amaze-search>
-        <amaze-products></amaze-products>
-        <amaze-recommendations></amaze-recommendations>
+    <div>
+        <Grid columns={1}>
+            <Grid.Row className={styles.header}><amaze-search></amaze-search> </Grid.Row>
+            <Grid.Row>
+                <Grid columns={2}>
+                    <Grid.Row>
+                        <Grid.Column><amaze-products></amaze-products></Grid.Column>
+                        <Grid.Column><amaze-recommendations></amaze-recommendations></Grid.Column>
+                    </Grid.Row>
+                </Grid>
+            </Grid.Row>
+        </Grid>
     </div>
   );
 }

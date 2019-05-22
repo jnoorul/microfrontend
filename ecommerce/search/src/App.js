@@ -1,10 +1,13 @@
 import React from 'react';
-import './App.css';
+import styles from './App.module.css';
+import { Search } from 'semantic-ui-react';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Welcome to Search!</h1>
+    <div className={styles.header}>
+      <Search className={styles.searchBox}
+          input={{ icon: 'search', iconPosition: 'left' }}
+      />
     </div>
   );
 }
