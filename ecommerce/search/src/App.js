@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from './App.module.css';
 import { Search } from 'semantic-ui-react';
+import styles from './App.module.css';
 
 function App() {
   return (
