@@ -22,4 +22,5 @@ class Search extends HTMLElement {
 
 customElements.define('amaze-search', Search);
 
-
+//just to test the app stand alone mode
+ReactDOM.render(<App />, document.getElementById('root'));

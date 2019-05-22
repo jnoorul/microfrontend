@@ -1,8 +1,8 @@
 .header {
-    background-color: #232f3e;
+    padding: 1rem;
 }
 
 .searchBox {
-    width: 50%;
+    width: 205px;
     margin: 0 auto;
 }

@@ -7,7 +7,7 @@ function App() {
   return (
     <div>
         <Grid columns={1}>
-            <Grid.Row className={styles.header}><amaze-search></amaze-search> </Grid.Row>
+            <Grid.Row><amaze-search class={styles.search}></amaze-search> </Grid.Row>
             <Grid.Row>
                 <Grid columns={2}>
                     <Grid.Row>

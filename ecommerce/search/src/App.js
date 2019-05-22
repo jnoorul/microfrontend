@@ -5,7 +5,7 @@ import { Search } from 'semantic-ui-react';
 function App() {
   return (
     <div className={styles.header}>
-      <Search className={styles.searchBox}
+      <Search className={styles.searchBox} placeholder="Search by product name"
           input={{ icon: 'search', iconPosition: 'left' }}
       />
     </div>
