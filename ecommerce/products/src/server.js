@@ -2,7 +2,7 @@ const request = require('request');
 
 const express = require('express');
 const app = express();
-app.use(express.static('./build'));
+app.use('/products/',express.static('./build'));
 
 app.use('/products/search/:searchString', function (req, res) {
     console.log(`request received for products search`);

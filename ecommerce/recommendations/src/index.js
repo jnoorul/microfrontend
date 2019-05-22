@@ -11,7 +11,7 @@ class Recommendations extends HTMLElement {
         const shadowRoot = this.attachShadow({mode: 'open'});
         const appRoot = document.createElement('div');
         const styleTag = document.createElement('link');
-        styleTag.href = 'http://localhost:4003/static/css/app.css';
+        styleTag.href = 'http://localhost:4000/recommendations/static/css/app.css';
         styleTag.rel = 'stylesheet';
 
         shadowRoot.appendChild(appRoot);

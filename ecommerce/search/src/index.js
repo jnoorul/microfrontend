@@ -11,7 +11,7 @@ class Search extends HTMLElement {
         const appRoot = document.createElement('div');
 
         const styleTag = document.createElement('link');
-        styleTag.href = 'http://localhost:4001/static/css/app.css';
+        styleTag.href = 'http://localhost:4000/search/static/css/app.css';
         styleTag.rel = 'stylesheet';
 
         shadowRoot.appendChild(styleTag);
