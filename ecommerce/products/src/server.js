@@ -41,5 +41,5 @@ const getEbayProducts = function (results) {
 };
 
 app.listen('4002', function () {
-  console.log("Server started on port: 4002");
+  console.log(`products app is running. >> http://localhost:4002/products`);
 });
