@@ -1,0 +1,12 @@
+.summaryContainer {
+    border-bottom: solid 1px #ddd;
+}
+
+.imageContainer {
+    padding: 1rem;
+    margin: 0 auto;
+}
+
+.detailsContainer {
+    padding: 1rem;
+}

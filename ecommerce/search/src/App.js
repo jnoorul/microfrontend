@@ -6,7 +6,7 @@ function App() {
   return (
     <div className={styles.header}>
       <Search className={styles.searchBox} placeholder="Search by product name"
-          input={{ icon: 'search', iconPosition: 'left' }}
+          input={{ icon: 'search', iconPosition: 'left', fluid: true }}
       />
     </div>
   );
