@@ -12,9 +12,16 @@ export default class App extends React.Component {
   }
 
   async componentDidMount() {
-    const searchResults = await searchProducts('iphone');
+    const searchText = this.props.searchText || 'iphone';
+    const searchResults = await searchProducts(searchText);
     this.setState({products: searchResults});
+  }
 
+  async componentDidUpdate(prevProps) {
+    if( this.props.searchText !== prevProps.searchText) {
+      const searchResults = await searchProducts(this.props.searchText);
+      this.setState({products: searchResults});
+    }
   }
 
   render() {
@@ -26,9 +33,9 @@ export default class App extends React.Component {
   }
 }
 
-export const renderApp = (appRoot, styleRoot) => {
+export const renderApp = (appRoot, styleRoot, props) => {
   const myCache = createCache({
     container: styleRoot,
   });
-  ReactDOM.render(<CacheProvider value={myCache}><App/></CacheProvider>, appRoot);
+  ReactDOM.render(<CacheProvider value={myCache}><App {...props}/></CacheProvider>, appRoot);
 };

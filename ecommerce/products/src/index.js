@@ -7,24 +7,36 @@ import 'semantic-ui-css/semantic.min.css';
 // window.SC_DISABLE_SPEEDY = true;
 
 class Products extends HTMLElement {
+  static get observedAttributes() {
+    return ['searchtext'];
+  }
   constructor() {
     super();
     const shadowRoot = this.attachShadow({mode: 'open'});
 
-    const appRoot = document.createElement('div');
-    shadowRoot.appendChild(appRoot);
+    this.appRoot = document.createElement('div');
+    shadowRoot.appendChild(this.appRoot);
 
     const linkTag = document.createElement('link');
     linkTag.href = 'http://localhost:4000/products/static/css/app.css';
     linkTag.rel = 'stylesheet';
     shadowRoot.appendChild(linkTag);
 
-    const styleTag = document.createElement('style');
-    shadowRoot.appendChild(styleTag);
+    this.styleTag = document.createElement('style');
+    shadowRoot.appendChild(this.styleTag);
 
 
-    renderApp(appRoot, styleTag);
+    renderApp(this.appRoot, this.styleTag, {});
     retargetEvents(shadowRoot);
+  }
+  set searchtext(value) {
+    this.setAttribute('searchText', value);
+  }
+  get searchtext() {
+    this.hasAttribute('searchText');
+  }
+  attributeChangedCallback(name, oldValue, newValue) {
+    renderApp(this.appRoot, this.styleTag, {searchText: newValue});
   }
 }
 

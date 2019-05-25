@@ -11,9 +11,16 @@ class App extends React.Component {
   }
 
   async componentDidMount() {
-    const searchResults = await getRecommendations('airpod');
+    const searchText = this.props.searchText || 'iphone';
+    const searchResults = await getRecommendations(searchText);
     this.setState({products: searchResults});
+  }
 
+  async componentDidUpdate(prevProps) {
+    if( this.props.searchText !== prevProps.searchText) {
+      const searchResults = await getRecommendations(this.props.searchText);
+      this.setState({products: searchResults});
+    }
   }
 
   render() {

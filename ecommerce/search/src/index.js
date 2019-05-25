@@ -4,23 +4,50 @@ import 'semantic-ui-css/semantic.min.css';
 import App from './App';
 
 class Search extends HTMLElement {
-    constructor() {
-        super();
-        const shadowRoot = this.attachShadow({mode: 'open'});
+  static get observedAttributes() {
+    return ['onSearch'];
+  }
 
-        const appRoot = document.createElement('div');
+  constructor() {
+    super();
+    const shadowRoot = this.attachShadow({mode: 'open'});
 
-        const styleTag = document.createElement('link');
-        styleTag.href = 'http://localhost:4000/search/static/css/app.css';
-        styleTag.rel = 'stylesheet';
+    const appRoot = document.createElement('div');
 
-        shadowRoot.appendChild(styleTag);
-        shadowRoot.appendChild(appRoot);
-        ReactDOM.render(<App />, appRoot);
-    }
+    const styleTag = document.createElement('link');
+    styleTag.href = 'http://localhost:4000/search/static/css/app.css';
+    styleTag.rel = 'stylesheet';
+
+    shadowRoot.appendChild(styleTag);
+    shadowRoot.appendChild(appRoot);
+    ReactDOM.render(<App/>, appRoot);
+  }
+
+  connectedCallback() {
+    this.addEventListener('keypress', (event) => {
+      const keyCode = event.which || event.keyCode;
+      if (keyCode === 13) {
+        this.dispatchEvent(new CustomEvent('search', {
+          detail: {
+            searchText: event.target.shadowRoot.activeElement.value,
+          },
+          bubbles: true,
+        }));
+      }
+    });
+  }
+
+  set search(eventHandler) {
+    this.setAttribute('onSearch', eventHandler);
+  }
+
+  get search() {
+    return this.hasAttribute('search');
+  }
+
 }
 
 customElements.define('amaze-search', Search);
 
 //just to test the app stand alone mode
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App/>, document.getElementById('root'));
