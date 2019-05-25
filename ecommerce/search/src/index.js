@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import retargetEvents from 'react-shadow-dom-retarget-events'
 import 'semantic-ui-css/semantic.min.css';
 import App from './App';
 
@@ -21,6 +22,7 @@ class Search extends HTMLElement {
     shadowRoot.appendChild(styleTag);
     shadowRoot.appendChild(appRoot);
     ReactDOM.render(<App/>, appRoot);
+    retargetEvents(shadowRoot);
   }
 
   connectedCallback() {
