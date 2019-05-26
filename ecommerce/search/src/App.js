@@ -21,7 +21,7 @@ class App extends React.Component {
   async onKeywordChange(event, {value}) {
     this.setState({keyword: value, isLoading: true});
     const keywords = await getKeywords(value);
-    setTimeout(this.setState({results: keywords, isLoading: false}), 300);
+    setTimeout(this.setState({results: keywords, isLoading: false}), 100);
   }
   render() {
     return (
@@ -34,7 +34,7 @@ class App extends React.Component {
           onResultSelect={this.handleResultSelect}
           className={styles.searchBox}
           placeholder="Search by product name"
-          input={{ icon: 'search', iconPosition: 'left', fluid: true }}
+          input={{ icon: 'search', iconPosition: 'left', fluid: true}}
         />
       </div>
     );

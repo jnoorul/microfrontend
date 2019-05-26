@@ -23,18 +23,20 @@ const getEbayProducts = function (results) {
   const jsonResults = JSON.parse(results);
   const products = jsonResults.findItemsAdvancedResponse[0].searchResult[0].item;
   const productResults = [];
-  for (let i = 0; i < products.length; i++) {
-    const product = products[i];
-    productResults.push({
-        "name": product.title[0],
-        "modelNumber": '',
-        "price": product.sellingStatus[0].currentPrice[0].__value__,
-        "currency": product.sellingStatus[0].currentPrice[0]['@currencyId'],
-        "originalPrice": '',
-        "image": product.galleryURL[0],
-        "sourceLink": product.viewItemURL[0]
-      }
-    )
+  if (products && products.length > 0) {
+    for (let i = 0; i < products.length; i++) {
+      const product = products[i];
+      productResults.push({
+          "name": product.title[0],
+          "modelNumber": '',
+          "price": product.sellingStatus[0].currentPrice[0].__value__,
+          "currency": product.sellingStatus[0].currentPrice[0]['@currencyId'],
+          "originalPrice": '',
+          "image": product.galleryURL[0],
+          "sourceLink": product.viewItemURL[0]
+        }
+      )
+    }
   }
   return productResults;
 };
