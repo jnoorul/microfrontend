@@ -45,7 +45,7 @@
     "postcss-safe-parser": "4.0.1",
     "react": "^16.8.6",
     "react-app-polyfill": "^1.0.1",
-    "react-dev-utils": "^9.0.1",
+    "react-dev-utils": "^12.0.1",
     "react-dom": "^16.8.6",
     "react-shadow-dom-retarget-events": "^1.0.10",
     "request": "^2.88.0",
